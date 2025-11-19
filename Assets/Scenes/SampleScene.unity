@@ -352,6 +352,7 @@ GameObject:
   - component: {fileID: 918978175}
   - component: {fileID: 918978177}
   - component: {fileID: 918978178}
+  - component: {fileID: 918978179}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -426,7 +427,7 @@ Transform:
   m_GameObject: {fileID: 918978174}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.26, y: -1.32, z: 0}
+  m_LocalPosition: {x: 1.91, y: 0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -496,6 +497,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &918978179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918978174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8af6466456d5bf244b1219a18738a224, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 8
+  length: 1.5
 --- !u!1 &1206168168
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,7 +524,7 @@ GameObject:
   - component: {fileID: 1206168170}
   - component: {fileID: 1206168169}
   - component: {fileID: 1206168171}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
