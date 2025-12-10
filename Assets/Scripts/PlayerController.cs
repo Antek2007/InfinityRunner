@@ -1,36 +1,27 @@
 using UnityEngine;
 
-/*
- ====================
- TO DO: 
-force change to linear velocity
-timeout for jump
-
- ====================
- */
-
 public class PlayerController : MonoBehaviour
 {
     public LayerMask groundMask;
     public float length = 0.6f;
     public int maxJumps = 2;
-    [SerializeField] float crouchScaleY = 0.5f;//!!!
+    [SerializeField] float crouchScaleY = 0.5f;
 
     private int jumpCount = 1;
 
     [SerializeField] float jumpForce = 12;
 
     private Vector3 startScale;
-    Vector3 crouchScale;//!!!
+    Vector3 crouchScale;
 
     bool isCrouching = false;
 
     private Rigidbody2D rb;
     void Start()
     {
-        startScale = transform.localScale; //skala startowa gracza
+        startScale = transform.localScale; // skala startowa gracza
         rb = GetComponent<Rigidbody2D>();
-        crouchScale = new Vector3(startScale.x, startScale.y * crouchScaleY, startScale.z);//skala crouch gracza
+        crouchScale = new Vector3(startScale.x, startScale.y * crouchScaleY, startScale.z); // skala crouch gracza
     }
 
     void Update()
