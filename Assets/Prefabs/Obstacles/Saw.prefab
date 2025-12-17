@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 634957032602891852}
   - component: {fileID: 6315305940838121400}
   m_Layer: 0
-  m_Name: "Pi\u0142a"
+  m_Name: Saw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
