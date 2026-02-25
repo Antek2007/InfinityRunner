@@ -3,27 +3,35 @@ using UnityEngine;
 
 public class TileManager : MonoBehaviour
 {
+    [SerializeField] float speed = 2f;
     [SerializeField] Transform start, end;
     [SerializeField] GameObject tilePrefab;
 
     [SerializeField] List<GameObject> tiles;
 
-    [SerializeField] float speed = 2f;
-    [SerializeField] float time = 4f;
+    float tileLength;
 
     private void Start()
     {
-        InvokeRepeating("SpawnTile",0f,time);
+        tileLength = tilePrefab.GetComponent<Renderer>().bounds.size.x;
     }
 
     void SpawnTile()
     {
-        tiles.Add(Instantiate(tilePrefab, start.position, Quaternion.identity));
+        var startPos = tiles[tiles.Count - 1].transform.position + Vector3.right * tileLength;
+        tiles.Add(Instantiate(tilePrefab, startPos, Quaternion.identity));
     }
 
     private void Update()
     {
         MoveTile();
+
+        if (tiles[0].transform.position.x < end.position.x)
+        {
+            Destroy(tiles[0]);
+            tiles.RemoveAt(0);
+            SpawnTile();
+        }
     }
 
     void MoveTile()
